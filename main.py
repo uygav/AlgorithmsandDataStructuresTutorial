@@ -82,36 +82,101 @@ import math
 ##########################################################################################
 # queue implementation in python
 
-class Queue:
+# class Queue:
+#     def __init__(self):
+#         self.queue = []
+
+#     # add an element
+#     def enqueue(self,item):
+#         self.queue.append(item)
+
+#     # remove an element
+#     def dequeue(self):
+#         if len(self.queue) < 1:
+#             return None
+#         return self.queue.pop(0)
+    
+#     # display the queue
+#     def display(self):
+#         print(self.queue)
+#     def size(self):
+#         return(len(self.queue))
+    
+# q = Queue()
+
+# q.enqueue(1)
+# q.enqueue(2)
+# q.enqueue(3)
+# q.enqueue(4)
+# q.enqueue(5)
+# q.display()
+
+# q.dequeue()
+
+# print("after removing an element")
+# q.display()
+
+##########################################################################################
+#  Linked List Data Structure
+
+#################################
+
+# class Node:
+#     def __init__(self,data):
+#         self.data = data
+#         self.next = None
+# head = Node(1)
+# second = Node(2)
+# third = Node(3)
+
+# head.next = second
+# second.next = third 
+
+#################################
+
+# class Node:
+#     def __init__(self,data=None):
+#         self.data = data
+#         self.next = None
+
+# head = None
+# one = None
+# two = None 
+# three = None
+
+# one = Node()    
+# two = Node()
+# three = Node()
+
+# one.next = two
+# two.next = three
+# three.next = None
+
+# head = one
+
+#################################
+# Linked list implementation in Python
+
+class Node:
+    def __init__(self,item):
+        self.item = item
+        self.next = None
+
+class LinkedList:
     def __init__(self):
-        self.queue = []
+        self.head = None
 
-    # add an element
-    def enqueue(self,item):
-        self.queue.append(item)
+if __name__ == '__main__':
+    linked_list = LinkedList()
 
-    # remove an element
-    def dequeue(self):
-        if len(self.queue) < 1:
-            return None
-        return self.queue.pop(0)
-    
-    # display the queue
-    def display(self):
-        print(self.queue)
-    def size(self):
-        return(len(self.queue))
-    
-q = Queue()
+    linked_list.head = Node(1)
+    second = Node(2)
+    third = Node(3)
 
-q.enqueue(1)
-q.enqueue(2)
-q.enqueue(3)
-q.enqueue(4)
-q.enqueue(5)
-q.display()
+    linked_list.head.next = second
+    second.next = third
 
-q.dequeue()
-
-print("after removing an element")
-q.display()
+    while linked_list.head != None:
+        print(linked_list.head.item, end=" ")
+        linked_list.head = linked_list.head.next
+        
